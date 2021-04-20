@@ -17,13 +17,11 @@ class ShapeFactory
      *
      * @param int $nbTops
      * @param array $shapeParameters
-     * @return mixed
+     * @return ShapeInterface
      *
      */
-    public function createShape(int $nbTops, array $shapeParameters)
+    public function createShape(int $nbTops, array $shapeParameters): ShapeInterface
     {
-
-        $result = null;
 
         switch ($nbTops) {
             case 0:
