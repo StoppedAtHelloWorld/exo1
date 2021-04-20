@@ -40,7 +40,7 @@ class ShapeFactory
                     $result = new Square($shapeParameters[0]);
                 } /** Sinon c'est un rectangle */
                 else {
-                    $result = new rectangle($shapeParameters[0], $shapeParameters[1]);
+                    $result = new Rectangle($shapeParameters[0], $shapeParameters[1]);
                 }
                 break;
         }
