@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Exo1\Circle;
 use App\Exo1\Rectangle;
 use App\Exo1\Triangle;
+use App\Exo1\ShapeFactory;
 use App\Exo1\Square;
 use App\Exo1\AbstractPolygon;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,13 +24,13 @@ class Exo1Controller extends AbstractController
 
     public function exo1(): JsonResponse
     {
-        $shapes[] = new Circle(3);
-        $shapes[] = new Square(4);
-        $shapes[] = new Rectangle(2,3);
-        $shapes[] = new Rectangle(4,2);
-        $shapes[] = new Circle(2);
-        $shapes[] = new Triangle(3,4,5);
-
+        $shapeFactory = new shapeFactory();
+        $shapes[] = $shapeFactory->createShape(0, [0 => 3]);
+        $shapes[] = $shapeFactory->createShape(4, [0 => 4, 1 => 4]);
+        $shapes[] = $shapeFactory->createShape(4, [0 => 2, 1 => 3]);
+        $shapes[] = $shapeFactory->createShape(4, [0 => 4, 1 => 2]);
+        $shapes[] = $shapeFactory->createShape(4, [0 => 3, 1 => 3]);
+        $shapes[] = $shapeFactory->createShape(3, [0 => 3, 1 => 4, 2 => 5]);
 
         /**
          * @var $sumPerimeters float
